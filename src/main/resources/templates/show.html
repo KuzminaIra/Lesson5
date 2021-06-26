@@ -5,12 +5,18 @@
     <title th:text="${Book.getTitle()}">Просмотр</title>
 </head>
 <body>
-<div>Название: </div>
-<p th:text="${Book.getTitle()}">Название</p>
-<div>Автор: </div>
-<p th:text="${Book.getAuthor()}">Автор</p>
-<div>Год издания: </div>
-<p th:text="${Book.getYear()}">Год издания</p>
+<table>
+    <tr>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Год</th>
+    </tr>
+    <tr>
+        <td th:text="${Book.getTitle()}">Название</td>
+        <td th:text="${Book.getAuthor()}">Автор</td>
+        <td th:text="${Book.getYear()}">Год издания</td>
+    </tr>
+</table>
 <form th:method="DELETE" th:action="@{/{id}(id=${Book.getId()})}">
     <input type="submit" value="Удалить книгу из списка"/>
 </form>
